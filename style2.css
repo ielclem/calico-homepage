@@ -1,0 +1,371 @@
+body {
+  background-image: url(images/background_home_mobile.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.logo {
+  margin-top: 6px;
+  height: 50px;
+  width: 190px;
+}
+
+#welcome {
+  margin-top: 15%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.portrait-container {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.welcome-container {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 50px;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+}
+
+.portrait {
+  width: 70px;
+  height: auto;
+  max-width: 100%;
+}
+
+.custom-navbar {
+  background-color: #ed4f68;
+}
+
+.play-container {
+  padding-left: 10px;
+  margin-top: 7%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.characters-container {
+  padding-left: 10px;
+  margin-top: 7%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shop-now-container {
+  margin-top: 7%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-image {
+  position: relative;
+}
+
+.btn-image img {
+  filter: drop-shadow(0 0 1px rgba(255, 255, 255, 0.8));
+  transition: filter 0.3s ease;
+}
+
+.btn-image img:hover {
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1));
+  transform: scale(1.03);
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1));
+}
+
+/* --- DESKTOP NAVBAR --- */
+.desktop-nav {
+  /* same pink background as mobile */
+  background-color: #ed4f68;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+/* Base desktop menu links (keep if you already have similar) */
+.desktop-menu li a {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  padding: 6px 18px;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  transition: 0.3s ease;
+}
+
+/* Subtle ACTIVE state */
+.desktop-menu li a.active {
+  border-radius: 999px;           /* fully rounded */
+  color: #ffffff;
+}
+
+/* Smaller white rounded caps top & bottom */
+.desktop-menu li a.active::before,
+.desktop-menu li a.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;                     /* a bit inset from the sides */
+  height: 3px;                    /* smaller + subtler */
+  background: #ffffff;
+  border-radius: 999px;
+}
+
+/* top cap */
+.desktop-menu li a.active::before {
+  top: -5px;                      /* just peeks above */
+}
+
+/* bottom cap */
+.desktop-menu li a.active::after {
+  bottom: -5px;                   /* just peeks below */
+}
+
+/* Desktop logo (you can tweak size separate from mobile) */
+.logo-desktop {
+  height: 40px;
+  width: auto;
+}
+
+/* Center menu links */
+.desktop-menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  font-family: "Gabarito", sans-serif;
+  transition: all 0.25s ease;
+}
+
+.desktop-menu a {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.desktop-menu a:hover {
+  transform: scale(1.07);
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.9));
+}
+
+/* Search bar styling */
+.search-wrapper {
+  position: relative;
+  min-width: 220px; /* adjust if needed */
+}
+
+.search-input {
+  border-radius: 999px;
+  padding-right: 2.25rem;
+  border: none;
+}
+
+.search-icon-btn {
+  position: absolute;
+  top: 50%;
+  right: 0.6rem;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-size: 1rem;
+}
+
+/* Round white icon buttons on the right */
+.desktop-icon-btn {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+/* ====================================================== */
+/*  DESKTOP BACKGROUND IMAGE                              */
+/* ====================================================== */
+@media (min-width: 768px) {
+  body {
+    background-image: none; /* removes mobile background on desktop */
+    background-color: #ffffff;
+  }
+
+  .home-desktop {
+    background-image: url("images/background_home_desktop.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: calc(100vh - 64px); /* adjust if navbar height differs */
+    padding-top: 2rem;
+  }
+}
+
+/* ====================================================== */
+/*  DESKTOP LEFT COLUMN: PORTRAIT + WELCOME               */
+/* ====================================================== */
+
+/* Container holding portrait + welcome text */
+.desktop-left-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+
+  /* Move the entire group */
+  transform: translate(60px, -400px); /* 👉 tweak these to taste */
+  gap: 1.5rem; /* spacing between portrait + text */
+}
+
+/* Portrait image */
+.desktop-portrait {
+  width: 110px;
+  height: auto;
+
+  /* Soft subtle shadow */
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25));
+}
+
+/* Welcome text */
+.desktop-welcome-text {
+  margin-top: 5%;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 700;
+  font-size: 3.2rem;
+  line-height: 1.1;
+  color: white;
+
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ====================================================== */
+/*  DESKTOP MIDDLE COLUMN: HERO BUNNY + SHOP NOW          */
+/* ====================================================== */
+
+/* CENTER COLUMN: hero bunny + overlapping Shop button */
+/* Overall desktop row alignment */
+.desktop-main-row {
+  align-items: flex-end; /* all three columns line up toward bottom */
+}
+
+/* CENTER COLUMN: hero bunny + overlapping Shop button */
+.desktop-hero-wrapper {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: flex-end; /* bunny sits near bottom of its column */
+  justify-content: center; /* centered horizontally */
+  padding-bottom: 0.25rem; /* room for overlapping button */
+
+}
+
+.desktop-hero-img {
+  margin-top: 7%;
+  max-height: 740px; /* tweak to taste */
+  width: auto;
+}
+
+.desktop-hero-img:hover {
+  filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.9));
+}
+
+.desktop-shop-btn-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-52%, -80%); /* 40% controls how far the button dips */
+}
+
+.desktop-shop-btn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.desktop-shop-btn img:hover {
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1));
+}
+
+.desktop-shop-btn img {
+  width: 1000px; /* adjust if your button image is wider/narrower */
+  max-width: 100%;
+}
+
+
+  /* Right column layout */
+.desktop-right-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+    transform: translate(-50px, -250px); /* move upward more */
+}
+
+  /* Image buttons */
+  .desktop-image-btn {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.3s ease;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25));
+  }
+
+  .desktop-image-btn img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Hover — magical glow + lift */
+  .desktop-image-btn:hover {
+    transform: scale(1.03);
+    filter: drop-shadow(0 0 18px rgba(255,255,255,0.8));
+  }
+
+/* SHOP NOW BUTTON — add easing + hover animation */
+.desktop-shop-btn img {
+    width: 800px;
+    max-width: 100%;
+    display: block;
+    transition: transform 0.2s ease, filter 0.3s ease;
+
+    /* soft idle glow */
+    filter: drop-shadow(0 0 6px rgba(255,255,255,0.4));
+}
+
+.desktop-shop-btn img:hover {
+    transform: scale(1.03); /* gentle lift */
+    filter: drop-shadow(0 0 18px rgba(255,255,255,0.9)); /* bright glow */
+}
+
+  /* HERO BUNNY — Idle floating animation + glow + hover lift */
+  .desktop-hero-img {
+    width: auto;
+    transition: transform 0.2s ease, filter 0.3s ease;
+
+    /* Idle glow */
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.35));
+
+    /* Idle floating animation */
+    animation: bunnyFloat 4.5s ease-in-out infinite;
+  }
+
+  .desktop-hero-img:hover {
+    transform: scale(1.03); /* hover lift */
+    filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.9));
+  }
+
+  /* Keyframes for idle floating */
+  @keyframes bunnyFloat {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-10px); } /* gentle upward float */
+    100% { transform: translateY(0); }
+  }
